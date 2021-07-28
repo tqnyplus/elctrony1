@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>أداة معلومات عن فيرس كرونا covid-19  | مصر</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+        <div class="covid19-card light_theme">
+            <h4 class="covid19-title-big"><img src="" class="flag-img" id="flag"/><span id="country"></span></h4>
+
+            <div class="covid19-row">
+
+                <div class="covid19-col text-warning-1">
+                    <div>
+                        <div class="covid19-title ">عدد الحالات</div>
+                        <span id="tot-cases" class="covid19-num confirmed"></span>
+                        <span id="new-cases" class="subsidiary"></span>
+            
+                    </div>
+                </div>
+
+                <div class='covid19-col text-warning-2'>
+                  <div>
+                    <div class='covid19-title'>الحالات النشطة</div>
+                    <span id="active" class="covid19-num active"></div>
+                </div>
+
+                <div class="covid19-col text-warning-3">
+                    <div>
+                    <div class="covid19-title">عدد الوفيات</div>
+                    <span id="tot-deaths" class="covid19-num deaths"></span>
+                    <span id="new-deaths" class="subsidiary"></span>
+                    </div>
+                </div>
+
+                <div class="covid19-col text-warning-4">
+                    <div class="covid19-title">تم شفائهم</div>
+                    <span id="tot-recovered" class="covid19-num recovered"></span>
+                    <span id="new-recovered" class="subsidiary"></span>
+                </div>
+
+            </div>
+  </body>
+</html>
+<script type="text/javascript">
+fetch('https://corona.lmao.ninja/v2/countries/egypt')
+.then((response) => {
+  return response.json();
+})
+.then((data) => {
+  console.log(data);
+  document.getElementById("country").innerHTML = data.country;
+  document.getElementById("tot-cases").innerHTML = data.cases.toLocaleString();
+  document.getElementById("new-cases").innerHTML = data.todayCases.toLocaleString();
+  document.getElementById("active").innerHTML = data.active.toLocaleString();
+  document.getElementById("tot-deaths").innerHTML = data.deaths.toLocaleString();
+  document.getElementById("new-deaths").innerHTML = data.todayDeaths.toLocaleString();
+  document.getElementById("tot-recovered").innerHTML = data.recovered.toLocaleString();
+  document.getElementById("new-recovered").innerHTML = data.todayRecovered.toLocaleString();
+  document.getElementById("flag").src = data.countryInfo.flag;
+});
+</script>

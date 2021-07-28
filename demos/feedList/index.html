@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Tajawal:400,500,700,900" rel="stylesheet">
+	<link rel="stylesheet" href="../assets/style.css"/>
+	<link rel="stylesheet" href="../../cdn/feedlist/mint.feedList.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"/>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/imintweb/mint-layout/mint-layout.min.css"/>
+	<title>سكربت عرض أخر مواضيع المدونة</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+<header>
+	<h1>سكربت عرض أخر المواضيع لبلوجر</h1>
+	<h3>تطوير Mint Web</h3>
+</header>
+
+<div class="container desktop">
+	<div class="container-action">
+		<div class="row wrap center">
+			<div class="col-4 col-md-6 col-lg-3">
+				<a href="https://github.com/imintweb/mint-feedList" target="_blank" class="brand">
+					<div class="brand-icon"><i class="fab fa-github"></i></div>
+					<div class="brand-text">مستودع الأداة علي github</div>
+				</a>
+			</div>
+			<div class="col-4 col-md-6 col-lg-3">
+				<a href="https://codepen.io/karasuthemes/full/QXvLOy" target="_blank" class="brand">
+					<div class="brand-icon"><i class="fab fa-codepen"></i></div>
+					<div class="brand-text">شاهد الأداة علي  codepen</div>
+				</a>
+			</div>
+			<div class="col-4 col-md-6 col-lg-3">
+				<a href="#" class="brand">
+					<div class="brand-icon"><i class="fa fa-edit"></i></div>
+					<div class="brand-text">شاهد الموضوع علي المدونة</div>
+				</a>
+			</div>
+		</div>
+
+	</div>
+	<div class="container-headline">
+		<h2 id="layout">النسق</h2>
+		<span>التصاميم المتاحة</span>
+		<div class="container-headline__messages">
+			التصاميم الموضحة أدناه هي عينة فقط ولا تمثل الأداة الأصلية <strong>FeedList</strong> تم تطويرها بواسطة <strong>Mint Web</strong>,يمكن معاينة الأداة علي<strong>codepen</strong> لتشاهد بشكل خي كيف تعمل الأداة
+		</div>
+	</div>
+	<div class="row wrap center">
+		<div class="col-12 col-md-6 col-lg-4">
+			<div class="app">
+				<div class="app-topbars">الشكل الأفتراضي</div>
+				<div class="app-container">
+					<div class="mint-feedList default">
+						<div class="mint-feedList-item">
+							<div class="mint-feedList-item__image">
+								<img src="../../assets/img/image-default.svg" alt="Reacciones de facebook para Blogger">
+							</div>
+							<div class="mint-feedList-item__content">
+								<a href="#" class="mint-feedList-item__title">هذا النص يمكن أن يتم تركيبه على أي تصميم</a>
+								<p class="mint-feedList-item__summary">فى كثير من الأحيان أن يطلع على صورة حقيقية لتصميم الموقع</p>
+							</div>
+						</div>
+						<div class="mint-feedList-item">
+							<div class="mint-feedList-item__image">
+								<img src="../../assets/img/image-default.svg" alt="Reacciones de facebook para Blogger">
+							</div>
+							<div class="mint-feedList-item__content">
+								<a href="#" class="mint-feedList-item__title">هذا النص يمكن أن يتم تركيبه على أي تصميم</a>
+								<p class="mint-feedList-item__summary">فى كثير من الأحيان أن يطلع على صورة حقيقية لتصميم الموقع</p>
+							</div>
+						</div>
+						<div class="mint-feedList-item">
+							<div class="mint-feedList-item__image">
+								<img src="../../assets/img/image-default.svg" alt="Reacciones de facebook para Blogger">
+							</div>
+							<div class="mint-feedList-item__content">
+								<a href="#" class="mint-feedList-item__title">هذا النص يمكن أن يتم تركيبه على أي تصميم</a>
+								<p class="mint-feedList-item__summary">فى كثير من الأحيان أن يطلع على صورة حقيقية لتصميم الموقع</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-12 col-md-6 col-lg-4">
+			<div class="app">
+				<div class="app-topbars">وضع التراكم</div>
+				<div class="app-container">
+					<div id="mint-feedList2">
+						<div class="mint-feedList overlay">
+							<div class="mint-feedList-item">
+								<div class="mint-feedList-item__image">
+									<a href="#"><img src="../../assets/img/image-default2.svg" alt=""></a>
+									<span class="mint-feedList-item__title">هذا النص يمكن أن يتم تركيبه على أي تصميم</span>
+								</div>
+								<div class="mint-feedList-item__content">
+									<div class="mint-feedList-item__meta">
+										<span class="tags">الفئة</span>
+										<span class="timestamp"> 15/06/2019</span>
+									</div>
+									<p class="mint-feedList-item__summary">
+										هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة, ولا يحوي أخطاء لغوية،
+									</p>
+								</div>
+							</div>
+							<div class="mint-feedList-item">
+								<div class="mint-feedList-item__image">
+									<a href="#"><img src="../../assets/img/image-default2.svg" alt=""></a>
+									<span class="mint-feedList-item__title">هذا النص يمكن أن يتم تركيبه على أي تصميم</span>
+								</div>
+								<div class="mint-feedList-item__content">
+									<div class="mint-feedList-item__meta">
+										<span class="tags">الفئة</span>
+										<span class="timestamp"> 15/06/2019</span>
+									</div>
+									<p class="mint-feedList-item__summary">
+										هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة, ولا يحوي أخطاء لغوية،
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container-headline">
+		<h2 id="propiedades">الخصائص</h2>
+		<span>الخيارات المتاحة (javascript)</span>
+	</div>
+	<div class="container-section">
+		<table class="app-table">
+		  <tr class="app-table__header">
+		    <th>الخصائص</th>
+		    <th>إستخداماتها</th>
+		    <th>القيمة المتوقعة</th>
+		  </tr>
+		  <tr>
+		    <td>selector</td>
+		    <td>
+		    	<div class="app-table__value"><strong>أفتراضي </strong><span class="app-btn">document.getElementById('mint-feedLists')</span> </div>
+		    	<div class="app-table__description">يجب أن يكون محدد HTML صالح.</div></td>
+		    <td>Node HTML</td>
+		  </tr>
+		  <tr>
+		    <td>home_url</td>
+		    <td>
+				<div class="app-table__value"><strong>أفتراضي </strong><span class="app-btn">URL actual</span> </div>
+		    	<div class="app-table__description">رابط من أين سيتم الحصول على المواضيع. ضروري إذا أردنا إظهار المواضيع من بعض المدون أو المواقع الأخري.</div></td>
+		    <td>string</td>
+		  </tr>
+		  <tr>
+		    <td>label</td>
+		    <td>
+				<div class="app-table__value"><strong>أفتراضي </strong><span class="app-btn">none</span> </div>
+		    	<div class="app-table__description">تسمح لنا بإختيار تسمية معينة للعرض</div></td>
+		    </td>
+		    <td>string</td>
+		  </tr>
+		  <tr>
+		    <td>length</td>
+		    <td>
+				<div class="app-table__value"><strong>أفتراضي </strong><span class="app-btn">4</span> </div>
+		    	<div class="app-table__description">تسمح لنا بإختيار عدد المواضيع المراد عرضها.</div></td>
+		    <td>number</td>
+		  </tr>
+		  <tr>
+		    <td>render</td>
+		    <td>
+				<div class="app-table__value"><strong>أفتراضي </strong><span class="app-btn">default</span> </div>
+		    	<div class="app-table__description">تتيح لنا معاجلة بنية عناصر HTML. <a href="#" class="app-btn" data-modal="modal1">رؤية القيم وكيفية استخدامها</a></td>
+		    <td>string/html/function</td>
+		  </tr>
+		  <tr>
+		    <td>loader</td>
+		    <td>
+				<div class="app-table__value"><strong>أفتراضي </strong><span class="app-btn">string/html</span> </div>
+		    	<div class="app-table__description">تمكنا من عرض نص أو أستخدام HTML</td>
+		    <td>html/string</td>
+		  </tr>
+		  <tr>
+		    <td>summary</td>
+		    <td>
+				<div class="app-table__value"><strong>أفتراضي </strong><span class="app-btn">64</span> </div>
+		    	<div class="app-table__description">مقدار ملخص النص الذي سيتم عرضه</td>
+		    <td>number</td>
+		  </tr>
+		</table>
+	</div>
+</div>
+
+</div>
+<footer>
+	<div class="footer-copyright">Mint Web © 2019</div>
+</footer>
+<script src="../../cdn/mint-ui/mint-ui-min.js"></script>
+<script>/*fix*/</script>
+</body>
+</html>

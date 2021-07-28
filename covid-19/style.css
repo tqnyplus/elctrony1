@@ -1,0 +1,248 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+}
+
+#container {
+    width: 100%;
+}
+.header {
+    background-color: #417dc2;
+    text-align: center;
+    font-size: 1.5em;
+    color: whitesmoke;
+    padding-bottom: 3px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.row {
+    border: 1px solid lightgrey;
+    overflow: hidden;
+}
+
+.header {
+    border-bottom: none
+}
+.key {
+    width: 50%;
+    float:left;
+    padding-left: 5px;
+}
+.value {
+    float: right;
+    padding-right: 5px;
+    font-weight: bold;
+}
+
+
+.footer {
+    background-color: #417dc2;
+    color: white;
+    font-weight: normal;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#update-date {
+    padding-top: 5px;
+    font-size: 10px;
+}
+
+#country{
+    font-weight: bold;
+}
+
+.footer > a {
+    color: white;
+}
+
+.new {
+    color: red;
+}
+
+.recovered {
+    color: green;
+}
+
+.deaths-dark {
+    color: grey;
+}
+
+.active {
+    color: brown;
+}
+
+.confirmed{
+  color: #A91D22;
+}
+.deaths {
+    color: #000000;
+}
+.recovered{
+   color: #2C9F39;
+}
+
+.subsidiary:before{
+    content:"("
+}
+.subsidiary:after{
+    content:")"
+}
+body .covid19-card.light_theme {
+    background: #fff;
+    color: #21252b
+}
+
+body .covid19-card.dark_theme {
+  background: #242633;
+   color: #fff;
+}
+
+#updated {font-size: 10px}
+
+.covid19-card {
+    padding: 0 6px 15px 13px;
+    box-shadow: 0 4px 12px 0 rgba(9,32,76,.05);
+    border-radius: 8px;
+    overflow: auto;
+}
+
+.covid19-card h4.covid19-title-big {
+   font-size: 12px;
+}
+
+.covid19-card .covid19-row {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin-top: 8px;
+}
+
+.covid19-card .covid19-col {
+    margin-right: 4px;
+    text-transform: uppercase;
+   flex-basis: 33%;
+}
+
+.covid19-card .text-warning-4 {
+    border-right: 0;
+    padding-right: 0;
+    color: #337ab7;
+}
+
+.covid19-card .text-warning-3 {
+    color: #666666;
+}
+
+.covid19-card .text-warning-2 {
+    color: #ff9c00;
+}
+
+.dark_theme.covid19-card .text-warning-3 {
+    color: #b9b9b9 !important;
+}
+.covid19-card .text-warning-1 {
+    color: #c9302c;
+}
+
+.covid19-card .covid19-title {
+    font-size: 14px;
+    min-width: initial;
+    line-height: 1.5;
+    overflow: hidden;
+}
+
+
+.covid19-card .covid19-num {
+    color: currentcolor;margin-right: 4px;font-size: 14px;min-width: initial;
+
+}
+
+.covid19-card.full-data .covid19-row.first-ncrts {
+    margin-left: auto;
+    margin-right: auto
+}
+
+@media screen and (max-width: 769px) {
+    .covid19-card.full-data .covid19-row.first-ncrts {
+        display:block
+    }
+
+    .covid19-card.full-data .covid19-row.first-ncrts>.covid19-col {
+        max-width: 46%
+    }
+}
+
+.covid19-card.full-data .covid19-row.first-ncrts>.covid19-col {
+    border-radius: 5px;
+    border: 0;
+    background: #2c2935;
+    box-shadow: 0 2px 5px rgba(0,0,0,.05);
+    margin: 5px;
+    padding: 12px 15px;
+    text-align: left;
+    min-width: 140px;
+    vertical-align: top
+}
+
+
+.covid19-roll .covid19-title-big {
+    padding: 0 15px;
+    margin: 0 0 15px
+}
+
+.covid19-roll .covid19-country-stats {
+    width: 100%
+}
+
+.covid19-roll .covid19-col {
+    width: 25%;
+    float: left;
+    padding: 0;
+    padding-right: 0;
+    border: 0;
+    font-size: 14px;
+    text-align: right
+}
+
+.covid19-title-big .flag-img {
+   vertical-align: bottom;
+    flex-shrink: 0;
+    width: 14px;
+    height: 14px;
+    margin-right: 8px;
+    line-height: 0;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(128, 128, 128, 0.33);
+    border-image: initial;
+    border-radius: 50%;
+}
+
+.link-dfk-dark, .link-dfk-dark:visited {
+    color: white;
+}
+
+.link-dfk-dark:hover, .link-dfk-dark:hover:hover:visited {
+    color: #A91D22;
+}
+
+.link-dfk-light, .link-dfk-light:visited {
+    color: royalblue;
+}
+
+.link-dfk-light:hover, .link-dfk-light:hover:visited {
+    color: #A91D22;
+}
+
+.link-dfk, .link-dfk:visited {
+    color: white;
+}
+
+.link-dfk:hover, .link-dfk:hover:visited {
+    color: red;
+}

@@ -1,0 +1,449 @@
+[class*="mint-tips"],
+.mint-tips {
+    position: relative;
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+    height: 100%;
+}
+
+[class*="mint-tips"]::before,
+.mint-tips::before {
+    content: attr(data-title);
+    white-space: nowrap;
+    top: -10px;
+    color: #fff;
+    font-weight: 400;
+    font-size: 1em;
+    padding: 0.8em 1em;
+    background: #050505;
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.3), 0 1px 0px 0px rgba(0, 0, 0, 0.05);
+    pointer-events: none;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+[class*="mint-tips"]::after,
+[class*="mint-tips"]::before,
+.mint-tips::after,
+.mint-tips::before {
+    opacity: 0;
+    position: absolute;
+    left: 50%;
+    z-index: 100;
+    -webkit-transform: translate(-50%, -100%);
+    transform: translate(-50%, -100%);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transform-origin: top;
+    transform-origin: top;
+}
+
+
+/*creamos un indicador*/
+
+[class*="mint-tips"]::after,
+.mint-tips::after {
+    content: "";
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.9) transparent transparent transparent;
+    border-width: 10px 10px;
+    top: 8px;
+}
+
+
+/*mostramos todo*/
+
+[class*="mint-tips"]:hover::after,
+[class*="mint-tips"]:hover::before,
+.mint-tips:hover::after,
+.mint-tips:hover::before {
+    opacity: 1;
+}
+
+
+/*left*/
+
+[data-mint-tips=left]::after,
+[data-mint-tips=left]::before {
+    top: 50%;
+    right: auto;
+    -webkit-transform: translate(-100%, -50%);
+    transform: translate(-100%, -50%);
+}
+
+[data-mint-tips=left]::before {
+    left: -10px;
+}
+
+[data-mint-tips=left]::after {
+    left: 8px;
+    border-color: transparent transparent transparent rgba(0, 0, 0, 0.8);
+}
+
+
+/*right*/
+
+[data-mint-tips=right]::after,
+[data-mint-tips=right]::before {
+    top: 50%;
+    left: auto;
+    -webkit-transform: translate(100%, -50%);
+    transform: translate(100%, -50%);
+}
+
+[data-mint-tips=right]::before {
+    right: -10px;
+}
+
+[data-mint-tips=right]::after {
+    right: 8px;
+    border-color: transparent rgba(0, 0, 0, 0.8) transparent transparent;
+}
+
+
+/*bottom*/
+
+[data-mint-tips=bottom]::after,
+[data-mint-tips=bottom]::before {
+    top: auto;
+    -webkit-transform: translate(-50%, 100%);
+    transform: translate(-50%, 100%);
+}
+
+[data-mint-tips=bottom]::before {
+    bottom: -10px;
+}
+
+[data-mint-tips=bottom]::after {
+    bottom: 8px;
+    border-color: transparent transparent rgba(0, 0, 0, 0.8) transparent;
+}
+
+
+/*
+  => Animations
+*/
+
+
+/*Reset all animations*/
+
+
+/*if => default*/
+
+[class*="mint-tips--"]::before,
+[class*="mint-tips--"]::after {
+    -webkit-transition: opacity .2s, -webkit-transform .2s;
+    transition: opacity .2s, -webkit-transform .2s;
+    transition: transform .2s, opacity .2s;
+    transition: transform .2s, opacity .2s, -webkit-transform .2s;
+}
+
+[class*="mint-tips--"]:hover::before,
+[class*="mint-tips--"]:hover::after {
+    -webkit-transition: opacity .3s, -webkit-transform ease .5s;
+    transition: opacity .3s, -webkit-transform ease .5s;
+    transition: transform ease .5s, opacity .3s;
+    transition: transform ease .5s, opacity .3s, -webkit-transform ease .5s;
+}
+
+[class*="mint-tips--"]::before {
+    -webkit-transform-origin: bottom;
+    transform-origin: bottom;
+}
+
+[class*="mint-tips--"]::after {
+    -webkit-transform-origin: top;
+    transform-origin: top;
+}
+
+
+/*if => left*/
+
+[data-mint-tips=left][class*="mint-tips--"]::before {
+    -webkit-transform-origin: right;
+    transform-origin: right;
+}
+
+[data-mint-tips=left][class*="mint-tips--"]::after {
+    -webkit-transform-origin: left;
+    transform-origin: left;
+}
+
+
+/*if => botton*/
+
+[data-mint-tips=bottom][class*="mint-tips--"]::before {
+    -webkit-transform-origin: top;
+    transform-origin: top;
+}
+
+[data-mint-tips=bottom][class*="mint-tips--"]::after {
+    -webkit-transform-origin: bottom;
+    transform-origin: bottom;
+}
+
+
+/*if => right*/
+
+[data-mint-tips=right][class*="mint-tips--"]::before {
+    -webkit-transform-origin: left;
+    transform-origin: left;
+}
+
+[data-mint-tips=right][class*="mint-tips--"]::after {
+    -webkit-transform-origin: right;
+    transform-origin: right;
+}
+
+
+/*
+  =>Fade
+*/
+
+.mint-tips--fade:hover::before,
+.mint-tips--fade:hover::after {
+    -webkit-transition: opacity .5s;
+    transition: opacity .5s;
+}
+
+
+/*
+  => Slide
+*/
+
+[class*="mint-tips--slide"]:hover::before,
+[class*="mint-tips--slide"]:hover::after {
+    -webkit-transform: translate(-50%, -100%);
+    transform: translate(-50%, -100%);
+}
+
+
+/*if => left*/
+
+[data-mint-tips=left][class*="mint-tips--slide"]:hover::before,
+[data-mint-tips=left][class*="mint-tips--slide"]:hover::after {
+    -webkit-transform: translate(-100%, -50%);
+    transform: translate(-100%, -50%);
+}
+
+
+/*if => botton*/
+
+[data-mint-tips=bottom][class*="mint-tips--slide"]:hover::before,
+[data-mint-tips=bottom][class*="mint-tips--slide"]:hover::after {
+    -webkit-transform: translate(-50%, 100%);
+    transform: translate(-50%, 100%);
+}
+
+
+/*if => right*/
+
+[data-mint-tips=right][class*="mint-tips--slide"]:hover::before,
+[data-mint-tips=right][class*="mint-tips--slide"]:hover::after {
+    -webkit-transform: translate(100%, -50%);
+    transform: translate(100%, -50%);
+}
+
+
+/*
+  => Slide In
+*/
+
+.mint-tips--slide-in::before,
+.mint-tips--slide-in::after {
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+
+/*if => left*/
+
+[data-mint-tips=left].mint-tips--slide-in::before,
+[data-mint-tips=left].mint-tips--slide-in::after {
+    -webkit-transform: translate(-90%, -50%);
+    transform: translate(-90%, -50%);
+}
+
+
+/*if => botton*/
+
+[data-mint-tips=bottom].mint-tips--slide-in::before,
+[data-mint-tips=bottom].mint-tips--slide-in::after {
+    -webkit-transform: translate(-50%, 50%);
+    transform: translate(-50%, 50%);
+}
+
+
+/*if => right*/
+
+[data-mint-tips=right].mint-tips--slide-in::before,
+[data-mint-tips=right].mint-tips--slide-in::after {
+    -webkit-transform: translate(90%, -50%);
+    transform: translate(90%, -50%);
+}
+
+
+/*
+  => Slide Out
+*/
+
+.mint-tips--slide-out::before,
+.mint-tips--slide-out::after {
+    -webkit-transform: translate(-50%, -120%);
+    transform: translate(-50%, -120%);
+}
+
+
+/*if => left*/
+
+[data-mint-tips=left].mint-tips--slide-out::before {
+    -webkit-transform: translate(-110%, -50%);
+    transform: translate(-110%, -50%);
+}
+
+[data-mint-tips=left].mint-tips--slide-out::after {
+    -webkit-transform: translate(-200%, -50%);
+    transform: translate(-200%, -50%);
+}
+
+
+/*if => botton*/
+
+[data-mint-tips=bottom].mint-tips--slide-out::before,
+[data-mint-tips=bottom].mint-tips--slide-out::after {
+    -webkit-transform: translate(-50%, 120%);
+    transform: translate(-50%, 120%);
+}
+
+
+/*if => right*/
+
+[data-mint-tips=right].mint-tips--slide-out::before {
+    -webkit-transform: translate(110%, -50%);
+    transform: translate(110%, -50%);
+}
+
+[data-mint-tips=right].mint-tips--slide-out::after {
+    -webkit-transform: translate(200%, -50%);
+    transform: translate(200%, -50%);
+}
+
+
+/*
+  => Bounce
+*/
+
+[class*="mint-tips--bounce"]:hover::before,
+[class*="mint-tips--bounce"]:hover::after {
+    -webkit-transition: opacity .3s, -webkit-transform cubic-bezier(.66, -2, .36, 2) .5s;
+    transition: opacity .3s, -webkit-transform cubic-bezier(.66, -2, .36, 2) .5s;
+    transition: transform cubic-bezier(.66, -2, .36, 2) .5s, opacity .3s;
+    transition: transform cubic-bezier(.66, -2, .36, 2) .5s, opacity .3s, -webkit-transform cubic-bezier(.66, -2, .36, 2) .5s;
+    -webkit-transform: translate(-50%, -100%) scale(1);
+    transform: translate(-50%, -100%) scale(1);
+}
+
+
+/*if => left*/
+
+[data-mint-tips=left][class*="mint-tips--bounce"]:hover::before,
+[data-mint-tips=left][class*="mint-tips--bounce"]:hover::after {
+    -webkit-transform: translate(-100%, -50%) scale(1);
+    transform: translate(-100%, -50%) scale(1);
+}
+
+
+/*if => botton*/
+
+[data-mint-tips=bottom][class*="mint-tips--bounce"]:hover::before,
+[data-mint-tips=bottom][class*="mint-tips--bounce"]:hover::after {
+    -webkit-transform: translate(-50%, 100%) scale(1);
+    transform: translate(-50%, 100%) scale(1);
+}
+
+
+/*if => right*/
+
+[data-mint-tips=right][class*="mint-tips--bounce"]:hover::before,
+[data-mint-tips=right][class*="mint-tips--bounce"]:hover::after {
+    -webkit-transform: translate(100%, -50%) scale(1);
+    transform: translate(100%, -50%) scale(1);
+}
+
+
+/*
+  => Bounce In
+*/
+
+.mint-tips--bounce-in::before,
+.mint-tips--bounce-in::after {
+    -webkit-transform: translate(-50%, -100%) scale(.8);
+    transform: translate(-50%, -100%) scale(.8);
+}
+
+
+/*if => left*/
+
+[data-mint-tips=left].mint-tips--bounce-in::before,
+[data-mint-tips=left].mint-tips--bounce-in::after {
+    -webkit-transform: translate(-100%, -50%) scale(.8);
+    transform: translate(-100%, -50%) scale(.8);
+}
+
+
+/*if => botton*/
+
+[data-mint-tips=bottom].mint-tips--bounce-in::before,
+[data-mint-tips=bottom].mint-tips--bounce-in::after {
+    -webkit-transform: translate(-50%, 100%) scale(.8);
+    transform: translate(-50%, 100%) scale(.8);
+}
+
+
+/*if => right*/
+
+[data-mint-tips=right].mint-tips--bounce-in::before,
+[data-mint-tips=right].mint-tips--bounce-in::after {
+    -webkit-transform: translate(100%, -50%) scale(.8);
+    transform: translate(100%, -50%) scale(.8);
+}
+
+
+/*
+  => Bounce Out
+*/
+
+.mint-tips--bounce-out::before,
+.mint-tips--bounce-out::after {
+    -webkit-transform: translate(-50%, -100%) scale(1.1);
+    transform: translate(-50%, -100%) scale(1.1);
+}
+
+
+/*if => left*/
+
+[data-mint-tips=left].mint-tips--bounce-out::before,
+[data-mint-tips=left].mint-tips--bounce-out::after {
+    -webkit-transform: translate(-100%, -50%) scale(1.1);
+    transform: translate(-100%, -50%) scale(1.1);
+}
+
+
+/*if => botton*/
+
+[data-mint-tips=bottom].mint-tips--bounce-out::before,
+[data-mint-tips=bottom].mint-tips--bounce-out::after {
+    -webkit-transform: translate(-50%, 100%) scale(1.1);
+    transform: translate(-50%, 100%) scale(1.1);
+}
+
+
+/*if => right*/
+
+[data-mint-tips=right].mint-tips--bounce-out::before,
+[data-mint-tips=right].mint-tips--bounce-out::after {
+    -webkit-transform: translate(100%, -50%) scale(1.1);
+    transform: translate(100%, -50%) scale(1.1);
+}
